@@ -1,4 +1,5 @@
 import pygame
+
 from dino_runner.utils.constants import RUNNING,DUCKING,JUMPING
 from pygame.sprite import Sprite
 
@@ -17,6 +18,7 @@ def __init__(self):
         self.dino_run = True
         self.dino_duck = False
         self.dino_jump = False
+        
 
 def update(self, user_input):
     if user_input[pygame.K_DOWN]:
@@ -29,7 +31,7 @@ def update(self, user_input):
 
 def draw(self, screen):
     screen.blit(self.image, self.dino_rect)
-    
+    pass
 def run(self):
     self.image = RUNNING[0] if self.step_index < 5 else RUNNING[1]
     self.dino_rect.x = self.POS_X
